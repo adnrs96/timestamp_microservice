@@ -1,0 +1,23 @@
+{
+  "name": "timestamp_microservice",
+  "version": "1.0.0",
+  "description": "This is and excercise to learn MEAN",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+     "express": "4.13.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnrs96/timestamp_microservice.git"
+  },
+  "author": "Aditya Bansal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnrs96/timestamp_microservice/issues"
+  },
+  "homepage": "https://github.com/adnrs96/timestamp_microservice#readme"
+}
