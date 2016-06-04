@@ -7,30 +7,32 @@ app.use('/$',function(req,res){
 });
 app.get('^/:data',function(req,res){
 	 
+	var unix,natural;
 	if(/^[0-9]+$/.test(req.params.data))
 	{
-		var unix = moment(req.params.data,"X").format("X");
+		unix = moment(req.params.data,"X").format("X");
 		if(unix=='Invalid date')
 		unix=null;
-		var natural = moment(req.params.data,"X").format("MMMM DD, YYYY");
+		else
+		unix=Number.toNumber(unix);
+		natural = moment(req.params.data,"X").format("MMMM DD, YYYY");
 		if(natural=='Invalid date')
 		natural=null;
-		var timestamp = {"unix":unix , "natural":natural};
-		console.log(JSON.stringify(timestamp));
-		res.json(timestamp);
 	}
 	else
 	{
-		var unix = moment(req.params.data).format("X");
+		unix = moment(req.params.data).format("X");
 		if(unix=='Invalid date')
 		unix=null;
-		var natural = moment(req.params.data).format("MMMM DD, YYYY");
+		else
+		unix=Number.toNumber(unix);
+		natural = moment(req.params.data).format("MMMM DD, YYYY");
 		if(natural=='Invalid date')
 		natural=null;
-		var timestamp = {"unix":unix , "natural":natural};
-		console.log(JSON.stringify(timestamp));
-		res.json(timestamp);
 	}
+	var timestamp = {"unix":unix , "natural":natural};
+	console.log(JSON.stringify(timestamp));
+	res.json(timestamp);
 });
 
 app.listen(app.get('port'), function() {
