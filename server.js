@@ -14,7 +14,7 @@ app.get('^/:data',function(req,res){
 		if(unix=='Invalid date')
 		unix=null;
 		else
-		unix=Number.toNumber(unix);
+		unix=parseInt(unix);
 		natural = moment(req.params.data,"X").format("MMMM DD, YYYY");
 		if(natural=='Invalid date')
 		natural=null;
@@ -25,7 +25,7 @@ app.get('^/:data',function(req,res){
 		if(unix=='Invalid date')
 		unix=null;
 		else
-		unix=Number.toNumber(unix);
+		unix=parseInt(unix);
 		natural = moment(req.params.data).format("MMMM DD, YYYY");
 		if(natural=='Invalid date')
 		natural=null;
